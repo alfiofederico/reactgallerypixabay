@@ -2,8 +2,9 @@ function Card({image}) {
 
   const tags =image.tags.split(',')
 
+
   return (
-    <div className="mb-2 align-middle px-auto">
+    <div className="mb-6 align-middle px-auto">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <img src={image.webformatURL} alt="" className="w-full" />
         <div className="px-6 py-4">
@@ -12,13 +13,13 @@ function Card({image}) {
           </div>
           <ul>
             <li>
-              <strong>Views:</strong> {image.views}
+              <strong>Views:</strong> {image.views.toLocaleString("en")}
             </li>
             <li>
-              <strong>Downloads:</strong> {image.downloads}
+              <strong>Downloads:</strong> {image.downloads.toLocaleString("en")}
             </li>
             <li>
-              <strong>Likes:</strong> {image.likes}
+              <strong>Likes:</strong> {image.likes.toLocaleString("en")}
             </li>
           </ul>
         </div>

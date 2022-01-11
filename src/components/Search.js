@@ -1,11 +1,20 @@
 import {useState} from 'react'
+  import {  toast, ToastContainer } from "react-toastify";
+
+  import "react-toastify/dist/ReactToastify.css";
+
 
 function Search({ searchText }) {
+ 
   const [text, setText] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
-    searchText(text);
+    if (text === '') {
+            toast.error("Please enter the text!", {
+              position: toast.POSITION.TOP_RIGHT,
+            });
+    } else searchText(text);
   };
 
   return (
@@ -24,6 +33,7 @@ function Search({ searchText }) {
           >
             Search
           </button>
+          <ToastContainer autoClose={3000} />
         </div>
       </form>
     </div>

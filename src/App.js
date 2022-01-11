@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Card from './components/Card';
 import './App.css';
 import Search from './components/Search';
+import Footer from './components/Footer';
 import Spinner from './components/Spinner';
 
 function App() {
@@ -32,12 +33,13 @@ function App() {
       {loading ? (
         <Spinner />
       ) : (
-        <div className="grid grid-cols-3 gap-4 lg:ml-36  md:ml-1">
+        <div className="grid grid-cols-1 mx-2 sm:grid-cols-3 gap-4 lg:ml-36  md:ml-1">
           {images.map((image) => (
             <Card key={image.id} image={image} />
           ))}
         </div>
       )}
+      <Footer />
     </div>
   );
 }
