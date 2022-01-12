@@ -4,12 +4,26 @@ function Card({image}) {
 
 
   return (
-    <div className="mb-6 align-middle px-auto">
+    <div className="mb-10 align-middle px-auto">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img src={image.webformatURL} alt="" className="w-full" />
+        <a
+          href={`${image.pageURL}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={image.webformatURL} alt="" className="w-full hover:opacity-80" />
+        </a>
         <div className="px-6 py-4">
           <div className="font-bold text-purple-500 text-xl mb-2">
-            Photo by {image.user}
+            Photo by{" "}
+            <a
+              href={`https://pixabay.com/users/${image.username}-${image.user_id}`}
+              target="_blank"
+              rel="noreferrer"
+              className="underline hover:text-purple-400 "
+            >
+              {image.user}
+            </a>
           </div>
           <ul>
             <li>
